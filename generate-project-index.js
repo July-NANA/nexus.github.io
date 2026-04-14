@@ -20,7 +20,7 @@ function parseFrontMatter(content) {
 
 const files = fs
   .readdirSync(projectsDir)
-  .filter((file) => file.endsWith('.md'))
+  .filter((file) => file.endsWith('.md') && !file.startsWith('_'))
   .sort();
 
 const index = files.map((file) => {

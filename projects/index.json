@@ -1,14 +1,23 @@
 [
   {
     "slug": "agentic-ai-risk-traceability-audit-system",
+    "title": "Agentic AI Risk Traceability Audit System",
+    "period": "Mar 2025 - Oct 2025",
+    "datetime": "",
     "file": "projects/agentic-ai-risk-traceability-audit-system.md"
   },
   {
     "slug": "huawei-network-equipment-operation-service",
+    "title": "Huawei Network Equipment Operation Service",
+    "period": "Jul 2021 - Jan 2023",
+    "datetime": "",
     "file": "projects/huawei-network-equipment-operation-service.md"
   },
   {
     "slug": "wafer-defect-monitoring-application",
+    "title": "Wafer Defect Monitoring Application",
+    "period": "Jan 2023 - Aug 2023",
+    "datetime": "",
     "file": "projects/wafer-defect-monitoring-application.md"
   }
 ]

@@ -48,8 +48,15 @@ function getExcerpt(markdown) {
   return `${words.slice(0, 50).join(' ')}...`;
 }
 
+function normalizeProjectFile(file) {
+  return file.startsWith('projects/_') ? null : file;
+}
+
 async function buildProjectCard(project, index, template) {
-  const text = await fetchProjectText(project.file);
+  const file = normalizeProjectFile(project.file);
+  if (!file) return null;
+
+  const text = await fetchProjectText(file);
   const { meta, body } = parseFrontMatter(text);
   const node = template.content.cloneNode(true);
   const card = node.querySelector('.project-card');
@@ -59,7 +66,7 @@ async function buildProjectCard(project, index, template) {
   const summary = node.querySelector('[data-project-summary]');
 
   card.classList.add(`delay-${Math.min(index + 1, 3)}`);
-  link.href = `project.html?file=${encodeURIComponent(project.file)}`;
+  link.href = `project.html?file=${encodeURIComponent(file)}`;
   title.textContent = meta.title || project.slug || project.file;
   time.textContent = meta.period || 'Project document';
   time.setAttribute('datetime', meta.datetime || project.datetime || '');
@@ -77,5 +84,5 @@ document.addEventListener('DOMContentLoaded', async () => {
   container.innerHTML = '';
 
   const cards = await Promise.all(data.map((project, index) => buildProjectCard(project, index, template)));
-  cards.forEach((node) => container.appendChild(node));
+  cards.filter(Boolean).forEach((node) => container.appendChild(node));
 });
