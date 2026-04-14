@@ -32,12 +32,3 @@ For this repository, the expected project-site URL is:
 
 `https://july-nana.github.io/nexus.github.io/`
 
-## Assignment Submission
-
-The assignment also requires a Word document containing:
-
-- Name
-- Student ID
-- Website URL
-
-The Word file should be prepared after the final Pages URL is live and the student ID is confirmed.
